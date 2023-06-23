@@ -1,0 +1,21 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" [(ngModel)]="password" [ngClass]="{'invalid-password': !isPasswordValid()}">
+          <i class="material-icons toggle-password-icon" (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'visibility_off' : 'visibility' }}  
+          </i>
+        </div>
+      
+       
+      <button type="submit">Login</button>
+    </form>
+  
+  </div>
+  
